@@ -1,1 +1,29 @@
-<p>This is the partial for view 1.</p>
+<header>
+    <h1>NICE To Do</h1>
+</header>
+<main>
+    <summary>
+        <ng-pluralize count="itemsToDo" when="{'0': 'Nothing to do! Add one or get a coffee.', '1': 'Only one thing to do. Nearly done :)', 'other': '{{itemsToDo}} things to do. You\'d better get busy.'}"></ng-pluralize>
+    </summary>
+    <form name="niceToDoForm" ng-submit="addItem()">
+        <input type="text" placeholder="Type a new thing to do..." id="toDoItemText" ng-model="toDoItem" ng-required>
+    </form>
+    <ul>
+        <li ng-repeat="item in items" class="toDoItem">
+            <form class="niceToDoForm" ng-submit="editItem($index)">
+                <input type="checkbox" ng-model="item.done" ng-change="changeItem()" ng-disabled="item.deleted" ng-class="{'done':item.done, 'deleted':item.deleted}">
+                <label ng-dblclick="editToDoItemText=true" ng-hide="editToDoItemText" ng-class="{'edit':editToDoItemText}">{{item.title}}</label>
+                <button type="button" ng-click="deleteItem($index)" class="btnDelete">X</button>
+                <input type="text" ng-model="item.title" ng-show="editToDoItemText" th-escape th-enter="editToDoItemText=false" ng-blur="editToDoItemText=false" ng-required>
+            </form>
+        </li>
+    </ul>
+    <footer ng-show="items.length">
+        <div>
+            <input type="checkbox" id="allDone" ng-model="allDone" ng-click="setAllDone()" />
+            <label for="allDone">Mark all done</label>
+        </div>
+        <button class="btnClearDone" ng-show="itemsDone" ng-click="clearDone()">Clear done items</button>
+        <button class="btnClearDeleted" ng-show="itemsDeleted" ng-click="clearDeleted()">Clear deleted items</button>
+    </footer>
+</main>
