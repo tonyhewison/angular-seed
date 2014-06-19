@@ -39,7 +39,7 @@ test_script:
 #  - npm test
   - npm run test-single-run
   # e2e functional tests
-#  - npm run protractor
+  - npm run protractor
 
 #---------------------------------#
 #      artifacts configuration    #
