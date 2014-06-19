@@ -33,13 +33,13 @@ install:
 # to run your custom scripts instead of automatic tests
 test_script:
   # Output useful info for debugging.
-  - node --version
-  - npm --version
+#  - node --version
+#  - npm --version
   # unit tests
   # - npm test
-  - npm run test-single-run
+#  - npm run test-single-run
   # e2e functional tests
-  - npm run protractor
+#  - npm run protractor
 
 #---------------------------------#
 #      artifacts configuration    #
