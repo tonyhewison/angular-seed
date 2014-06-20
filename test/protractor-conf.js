@@ -17,6 +17,7 @@ exports.config = {
   // The following line does not seem necessary.
   // chromeDriver: 'path/to/my/chromedriver',
   // e.g.
+  chromeDriver: '../selenium/chromedriver',
 //  chromeDriver: '/Users/tonyhewison/chromedriver/2.9/chromedriver',
 
   capabilities: {
