@@ -11,13 +11,13 @@ exports.config = {
   // setting chromeOnly: true seems to workaround the problem by itself.
   //
   // Do not start a Selenium Standalone sever - only run this using chrome.
-  chromeOnly: true,
+//  chromeOnly: true,
   //
   //
   // The following line does not seem necessary.
   // chromeDriver: 'path/to/my/chromedriver',
   // e.g.
-  chromeDriver: '../selenium/chromedriver',
+//  chromeDriver: '../selenium/chromedriver',
 //  chromeDriver: '/Users/tonyhewison/chromedriver/2.9/chromedriver',
 
   capabilities: {
